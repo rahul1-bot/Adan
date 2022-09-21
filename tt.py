@@ -91,7 +91,7 @@ class Adan_Optimizer(Optimizer):
 
                 def grad_step_(data, m, v, n):
                     weighted_step_size = learning_rate / (n * correct_n).sqrt().add_(epsilon)
-                    denom = 1 + weight_decay * lr
+                    denom = 1 + weight_decay * learning_rate
                     data.addcmul_(weighted_step_size, (m * correct_m + (1 - beta2) * v * correct_v), value = -1.).div_(denom)
                     
                 
