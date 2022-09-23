@@ -86,7 +86,7 @@ class TripleJuncture_LRScheduler(LR_Scheduler_Interface):
         super(TripleJuncture_LRScheduler, self).__init__(optimizer, init_learning_rate)
         
         if self.param_dict['warmup_steps'] != 0:
-            warmup_rate: float = (self.param_dict['peak_learning_rate'] - self.param_dict['init_learning_rate']) / self.param_dict[warmup_steps]
+            warmup_rate: float = (self.param_dict['peak_learning_rate'] - self.param_dict['init_learning_rate']) / self.param_dict['warmup_steps']
         else: 
             warmup_rate: float = 0.0        
         
