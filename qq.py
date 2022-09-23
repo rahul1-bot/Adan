@@ -130,7 +130,7 @@ class TripleJuncture_LRScheduler(LR_Scheduler_Interface):
             self.param_dict['learning_rate'] = self.param_dict['peak_learning_rate']
         
         elif stage == 2:
-            self.param_dict['learning_rate'] = self.param_dict['peal_learning_rate'] * math.exp(-self.param_dict['decay_factor'] * steps_in_stage)
+            self.param_dict['learning_rate'] = self.param_dict['peak_learning_rate'] * math.exp(-self.param_dict['decay_factor'] * steps_in_stage)
         
         elif stage == 3:
             self.param_dict['learning_rate'] = self.param_dict['final_learning_rate']
